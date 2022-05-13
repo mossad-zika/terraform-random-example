@@ -1,2 +1,5 @@
-# terraform-homework
-my first terraform project
+Commands:
+
+To start:
+
+```terraform apply -var "webservers_count=3"```
