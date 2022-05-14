@@ -9,6 +9,11 @@ terraform {
 
 provider "docker" {}
 
+resource "docker_network" "homeworknet" {
+  name   = "homeworknet"
+  driver = "bridge"
+}
+
 resource "docker_image" "httpecho" {
   name         = "hashicorp/http-echo:0.2.3"
   keep_locally = false
