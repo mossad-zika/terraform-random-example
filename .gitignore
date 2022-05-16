@@ -3,3 +3,4 @@ terraform.tfstate
 .terraform
 .idea
 .terraform.lock.hcl
+upstream.conf
