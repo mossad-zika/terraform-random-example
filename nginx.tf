@@ -2,6 +2,17 @@ locals {
   module_path        = abspath(path.module)
 }
 
+resource "local_file" "upstream" {
+  content     = templatefile("./upstream.tftpl", {
+    hosts = [
+      "webserver0",
+      "webserver1",
+      "webserver2"
+    ]
+  })
+  filename = "./upstream.conf"
+}
+
 resource "docker_container" "nginx-server" {
   name = "nginx-loadbalancer"
   image = docker_image.nginx.name
