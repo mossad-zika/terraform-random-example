@@ -15,7 +15,7 @@ resource "docker_container" "nginx-server" {
   }
   volumes {
     container_path  = "/etc/nginx/conf.d/default.conf"
-    host_path = "/home/zika/terraform-homework/upstream.conf"
+    host_path =  "${local.module_path}/upstream.conf"
     read_only = true
   }
 }
