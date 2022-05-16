@@ -15,12 +15,12 @@ resource "docker_network" "homeworknet" {
 }
 
 resource "docker_image" "httpecho" {
-  name         = "hashicorp/http-echo:0.2.3"
+  name         = "hashicorp/http-echo:${var.http-echo_docker_tag}"
   keep_locally = false
 }
 
 resource "docker_image" "nginx" {
-  name = "nginx:1.21.6-alpine"
+  name = "nginx:${var.nginx_docker_tag}"
   keep_locally = false
 }
 

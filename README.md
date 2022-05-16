@@ -5,11 +5,20 @@ To init:
 
 To start:
 
-```terraform apply -var "webservers_count=3"```
+```
+terraform apply -var "webservers_count=3"
+terraform apply -var "nginx_docker_tag=latest" -var "http-echo_docker_tag=latest"
+```
 
 To stop:
 
 ```terraform destroy```
+
+Access after start:
+```
+curl localhost:7777
+curl localhost:7777/health
+```
 
 
 Notes:
