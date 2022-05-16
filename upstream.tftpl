@@ -1,6 +1,6 @@
 upstream webservers {
 %{ for host in hosts ~}
-    server ${host}:5678;
+    server webserver${host}:5678;
 %{ endfor ~}
 }
 

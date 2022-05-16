@@ -1,14 +1,11 @@
 locals {
-  module_path        = abspath(path.module)
+  module_path     = abspath(path.module)
+  webserver_range = range(0, var.webservers_count)
 }
 
 resource "local_file" "upstream" {
   content     = templatefile("./upstream.tftpl", {
-    hosts = [
-      "webserver0",
-      "webserver1",
-      "webserver2"
-    ]
+    hosts = local.webserver_range
   })
   filename = "./upstream.conf"
 }
