@@ -11,6 +11,7 @@ resource "local_file" "upstream" {
 }
 
 resource "docker_container" "nginx-server" {
+  depends_on = [docker_container.js-webserver]
   name = "nginx-loadbalancer"
   image = docker_image.nginx.name
   networks_advanced {
