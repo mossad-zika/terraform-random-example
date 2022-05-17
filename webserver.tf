@@ -8,6 +8,7 @@ resource "docker_image" "js-simple-http-server" {
 
 
 resource "docker_container" "js-webserver" {
+  depends_on = [docker_image.js-simple-http-server]
   count = var.webservers_count
   image = docker_image.js-webserver.name
   networks_advanced {
@@ -19,6 +20,6 @@ resource "docker_container" "js-webserver" {
 #  command = ["-text=Hello from web-server ${count.index}"]
   ports {
     internal = 5678
-    external = 8000 + count.index
+    external = var.webserver_exposed_port_start_from + count.index
   }
 }

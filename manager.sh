@@ -17,11 +17,16 @@ function status_cluster() {
     fi
 }
 
+function second_cluster() {
+   echo "This one is not ready yet :("
+}
+
 case "$1" in
     start_cluster)   start_cluster ;;
     stop_cluster)    stop_cluster ;;
     status_cluster) status_cluster ;;
-    *) echo "usage: $0 start_cluster|stop_cluster|status_cluster" >&2
+    bonus) second_cluster ;;
+    *) echo "usage: $0 start_cluster|stop_cluster|status_cluster|bonus" >&2
        exit 1
        ;;
 esac

@@ -20,7 +20,7 @@ resource "docker_container" "nginx-server" {
   }
   ports {
     internal = 80
-    external = 7777
+    external = var.loadbalancer_exposed_port
   }
   volumes {
     container_path  = "/etc/nginx/conf.d/default.conf"

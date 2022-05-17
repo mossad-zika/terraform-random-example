@@ -10,7 +10,7 @@ terraform {
 provider "docker" {}
 
 resource "docker_network" "homeworknet" {
-  name   = "homeworknet"
+  name   = var.docker_network_name
   driver = "bridge"
 }
 

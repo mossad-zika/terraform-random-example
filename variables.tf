@@ -1,3 +1,21 @@
+variable "docker_network_name" {
+  description = "Uniq name dor docker network"
+  type        = string
+  default     = "homeworknet"
+}
+
+variable "webserver_exposed_port_start_from" {
+  description = "Port range start with to connect with web-server"
+  type        = number
+  default     = "8000"
+}
+
+variable "loadbalancer_exposed_port" {
+  description = "Port to connect with load-balancer"
+  type        = number
+  default     = "7777"
+}
+
 variable "webservers_count" {
   description = "Amount of webservers to run"
   type        = number
