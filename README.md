@@ -7,7 +7,7 @@ To start:
 
 ```
 terraform apply -var "webservers_count=3"
-terraform apply -var "nginx_docker_tag=latest" -var "http-echo_docker_tag=latest"
+terraform apply -var "nginx_docker_tag=latest" -var "js-webserver_docker_tag=latest"
 ```
 
 To stop:
@@ -18,6 +18,7 @@ Access after start:
 ```
 curl localhost:7777
 curl localhost:7777/health
+curl localhost:8000/health # Where 0 - is X (webserver)
 ```
 
 

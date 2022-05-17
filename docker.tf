@@ -14,8 +14,8 @@ resource "docker_network" "homeworknet" {
   driver = "bridge"
 }
 
-resource "docker_image" "httpecho" {
-  name         = "hashicorp/http-echo:${var.http-echo_docker_tag}"
+resource "docker_image" "js-webserver" {
+  name         = "webserver:${var.js-webserver_docker_tag}"
   keep_locally = false
 }
 

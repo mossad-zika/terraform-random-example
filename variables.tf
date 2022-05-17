@@ -10,8 +10,8 @@ variable "nginx_docker_tag" {
   default     = "1.21.6-alpine"
 }
 
-variable "http-echo_docker_tag" {
-  description = "Docker image tag for Hashicorp http-echo"
+variable "js-webserver_docker_tag" {
+  description = "Docker image tag for local js HTTP webserver"
   type        = string
-  default     = "0.2.3"
+  default     = "latest"
 }
