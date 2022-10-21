@@ -1,3 +1,16 @@
+This exercise should be performed locally using Terraform and Docker. Using Terraform and the official Docker provider, create the following cluster:
+
+1. Run X web-servers that serves a single static page with a message: Hello from web-server (1..X)
+
+2. Run a load-balancer in front of the web-servers that performs round robin load balancing
+
+3. On both web-servers and load-balancer, add a health endpoint returning the name of the component (web-server-(1..X) / load-balancer).
+
+4. Create support for setting different versions for the web-server and load-balancer
+
+5. Write a shell script for install(using git pull from GitHub)/start/stop/status of the cluster
+
+
 Prepare:
 ```
 # make sure you have curl and docker installed
