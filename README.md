@@ -1,4 +1,4 @@
-This exercise should be performed locally using Terraform and Docker. Using Terraform and the official Docker provider, create the following cluster:
+This exercise should be performed locally using Terraform and Docker. Using Terraform and any docker provider, create the following cluster:
 
 1. Run X web-servers that serves a single static page with a message: Hello from web-server (1..X)
 
